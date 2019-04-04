@@ -1,10 +1,20 @@
-import {IMenuItem} from "../lib/interfaces";
+import { IMenuItem } from '../lib/interfaces';
 
 const MenuItems: IMenuItem[] = [
   {
-    href: '/login',
+    href: '/',
+    text: 'الصفحة الرئيسية',
+    key: 'home',
+  },
+  {
+    href: '/sign-in',
     text: 'تسجيل الدخول',
-    key: 'login',
+    key: 'sign-in',
+  },
+  {
+    href: '/sign-up',
+    text: 'إنشاء حساب',
+    key: 'sign-up',
   },
 ];
 

@@ -7,6 +7,8 @@ import { StyleRules, useTheme, makeStyles } from '@material-ui/core/styles';
 import MenuItems from '../../config/MenuItems';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
+import { LinkComponent } from '../../components/LinkComponent';
+import { Link } from 'react-router-dom';
 
 const useStyle = makeStyles(
   (theme: Theme): StyleRules => {
@@ -34,7 +36,10 @@ const Menu = (props: any) => {
       <div className={classes.toolbar} />
       <List>
         {MenuItems.map(item => (
-          <ListItem button key={item.key}>
+          <ListItem
+            key={item.key}
+            component={LinkComponent}
+            href={item.href}>
             <ListItemText primary={item.text} />
           </ListItem>
         ))}

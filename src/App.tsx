@@ -1,9 +1,12 @@
 import * as React from 'react';
-import PageRenderer from './lib/PageRenderer';
 import { Suspense } from 'react';
 import withRoot from './withRoot';
 import { Route, Switch } from 'react-router-dom';
 import Layout from './layout';
+import { routes } from './config/routes';
+import { PublicRoute } from './components/PublicRoute/PublicRoute';
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
+import NotFoundPage from './pages/NotFoundPage';
 
 const HomePage = React.lazy(() => import('./pages/Home'));
 
@@ -13,7 +16,17 @@ const App = () => {
       <Suspense fallback={<div>يتم التحميل</div>}>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route component={PageRenderer} />
+          {routes.map((route, i) => {
+            return route.type === 'public' ? (
+              <PublicRoute key={i} {...route} />
+            ) : route.type === 'private' ? (
+              <PrivateRoute key={i} {...route} />
+            ) : (
+              <Route {...route} key={i} />
+            );
+          })}
+          )}
+          <Route component={NotFoundPage} />
         </Switch>
       </Suspense>
     </Layout>
