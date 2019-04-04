@@ -53,7 +53,7 @@ const Menu = (props: any) => {
       <Hidden smUp implementation="css">
         <Drawer
           variant="temporary"
-          anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+          anchor={theme.direction === 'rtl' ? 'left' : 'right'}
           open={props.open}
           onClose={props.onClose}
           classes={{
