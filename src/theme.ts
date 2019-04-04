@@ -1,9 +1,14 @@
-import { createMuiTheme } from '@material-ui/core';
-import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
+import createMuiTheme, {
+  ThemeOptions,
+} from '@material-ui/core/styles/createMuiTheme';
 
-// export const themeVariables = {
-//   backgroundColor: '#f4f4f4',
-// };
+export const themeVariables = {
+  backgroundColor: '#f4f4f4',
+  drawerWidth: 240,
+  container: {
+    maxWidth: 1105,
+  },
+};
 
 const MuiThemeVariables: ThemeOptions = {
   direction: 'rtl',
@@ -17,8 +22,7 @@ const MuiThemeVariables: ThemeOptions = {
   },
   typography: {
     fontSize: 16,
-    fontFamily: '"Noto Sans Kufi Arabic", Arabesque, "Helvetica", "Arial", sans-serif',
-    useNextVariants: true,
+    fontFamily: `"Noto Sans Kufi Arabic", Arabesque, "Helvetica", "Arial", sans-serif`,
   },
 };
 
