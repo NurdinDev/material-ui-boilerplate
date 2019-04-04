@@ -2,14 +2,6 @@ import createMuiTheme, {
   ThemeOptions,
 } from '@material-ui/core/styles/createMuiTheme';
 
-export const themeVariables = {
-  backgroundColor: '#f4f4f4',
-  drawerWidth: 240,
-  container: {
-    maxWidth: 1105,
-  },
-};
-
 const MuiThemeVariables: ThemeOptions = {
   direction: 'rtl',
   palette: {

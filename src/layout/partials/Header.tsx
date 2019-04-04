@@ -4,8 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
 import { StyleRules } from '@material-ui/core/styles';
-import { themeVariables } from '../../theme';
 import Toolbar from '@material-ui/core/Toolbar';
+import themeVariables from '../../lib/themeVariables';
 
 type Props = {
   menuIconToggle: () => void;
