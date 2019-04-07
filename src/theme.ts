@@ -1,20 +1,37 @@
 import createMuiTheme, {
   ThemeOptions,
 } from '@material-ui/core/styles/createMuiTheme';
+import themeVariables from './lib/themeVariables';
 
 const MuiThemeVariables: ThemeOptions = {
   direction: 'rtl',
   palette: {
     background: {
-      default: '#fff',
+      default: themeVariables.backgroundColor,
+      paper: themeVariables.paperColor,
     },
     primary: {
-      main: '#00887b',
+      main: themeVariables.colors.primary,
+      light: themeVariables.colors.primaryLight,
+      dark: themeVariables.colors.primaryDark,
     },
+    secondary: {
+      main: themeVariables.colors.secondary,
+    },
+    text: {
+      primary: themeVariables.font.primaryColor,
+      secondary: themeVariables.font.secondaryColor,
+      hint: themeVariables.font.hint,
+    },
+    common: {
+      black: themeVariables.colors.black,
+      white: themeVariables.colors.white
+    }
   },
   typography: {
-    fontSize: 16,
-    fontFamily: `"Noto Sans Kufi Arabic", Arabesque, "Helvetica", "Arial", sans-serif`,
+    htmlFontSize: themeVariables.font.size,
+    fontSize: themeVariables.font.size,
+    fontFamily: themeVariables.font.family,
   },
 };
 

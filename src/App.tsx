@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Suspense } from 'react';
 import withRoot from './withRoot';
 import { Route, Switch } from 'react-router-dom';
-import Layout from './layout';
+import Layout from './layout/Layout';
 import { routes } from './config/routes';
 import { PublicRoute } from './components/PublicRoute/PublicRoute';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';

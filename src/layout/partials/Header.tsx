@@ -15,9 +15,9 @@ const useStyle = makeStyles(
   (theme: Theme): StyleRules => {
     return {
       appBar: {
-        marginLeft: themeVariables.drawerWidth,
+        marginLeft: themeVariables.drawer.width,
         [theme.breakpoints.up('sm')]: {
-          width: `calc(100% - ${themeVariables.drawerWidth}px)`,
+          width: `calc(100% - ${themeVariables.drawer.width}px)`,
         },
       },
       menuButton: {

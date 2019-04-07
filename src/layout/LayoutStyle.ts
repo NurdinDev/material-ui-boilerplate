@@ -10,7 +10,7 @@ const LayoutStyle = makeStyles(
       toolbar: theme.mixins.toolbar,
       content: {
         flexGrow: 1,
-        padding: 6,
+        padding: theme.spacing(3),
       },
     };
   }

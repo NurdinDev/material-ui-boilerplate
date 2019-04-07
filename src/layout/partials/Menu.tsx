@@ -6,21 +6,25 @@ import { StyleRules, useTheme, makeStyles } from '@material-ui/core/styles';
 import MenuItems from '../../config/MenuItems';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
-import { LinkComponent } from '../../components/LinkComponent';
 import themeVariables from '../../lib/themeVariables';
+import { LinkComponent } from '../../components/LinkComponent';
 
 const useStyle = makeStyles(
   (theme: Theme): StyleRules => {
     return {
       drawer: {
         [theme.breakpoints.up('sm')]: {
-          width: themeVariables.drawerWidth,
+          width: themeVariables.drawer.width,
           flexShrink: 0,
         },
       },
+      link: {
+        color: themeVariables.colors.white,
+      },
       toolbar: theme.mixins.toolbar,
       drawerPaper: {
-        width: themeVariables.drawerWidth,
+        width: themeVariables.drawer.width,
+        backgroundColor: themeVariables.drawer.backgroundColor,
       },
     };
   }
@@ -33,10 +37,15 @@ const Menu = (props: any) => {
   const drawer = (
     <div>
       <div className={classes.toolbar} />
-      <List>
-        {MenuItems.map(item => (
-          <ListItem key={item.key} component={LinkComponent} href={item.href}>
-            <ListItemText primary={item.text} />
+      <List component="nav">
+        {MenuItems.map((item, index) => (
+          <ListItem key={index} component={LinkComponent} button to={item.href}>
+            <ListItemText
+              primary={item.text}
+              classes={{
+                primary: classes.link,
+              }}
+            />
           </ListItem>
         ))}
       </List>

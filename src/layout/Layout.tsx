@@ -1,5 +1,5 @@
 import * as React from 'react';
-import LayoutStyle from './style';
+import LayoutStyle from './LayoutStyle';
 import Header from './partials/Header';
 import Menu from './partials/Menu';
 
@@ -11,6 +11,7 @@ const Layout = (props: any) => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
 
   return (
     <div className={classes.root}>
